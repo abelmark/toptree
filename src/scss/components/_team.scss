@@ -1,0 +1,72 @@
+//
+// Team
+//
+.team {
+  @extend %section-padding;
+
+  background-color: $color-lightgrey;
+
+  &__header {
+    margin-bottom: 1em;
+
+    text-align: center;
+  }
+
+  &__container {
+    @include flex-grid(1, 1, 3, $xxl: 4);
+  }
+
+  &__card {
+    @extend .vertical-card__container;
+
+    padding-bottom: 1em;
+
+    @media (min-width: $mq-sm) {
+      padding: 0 1em 1em;
+    }
+  }
+
+  &__link {
+    @extend .vertical-card__link;
+
+    &:hover {
+
+      .team__img .absolute-bg {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      .team__name {
+        border-bottom: 1px solid $color-alpha;
+      }
+    }
+  }
+
+  &__img {
+    @extend .vertical-card__img;
+
+    background-color: $color-black;
+    overflow: hidden;
+
+    .absolute-bg {
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+  }
+
+  &__content {
+    padding: 2em 1em;
+
+    text-align: center;
+  }
+
+  &__name {
+    display: inline-block;
+
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+  }
+
+  &__position {
+    padding-top: 0.5em; 
+  }
+}

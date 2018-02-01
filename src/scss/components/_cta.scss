@@ -1,0 +1,20 @@
+//
+// CTA
+//
+.cta {
+  @extend .intro;
+
+  &__container {
+    @extend .intro__container;
+  }
+
+  &__header {
+    @extend .intro__header;
+  }
+
+  &__link {
+    @include button-slide();
+
+    margin-top: 2em;
+  }
+}

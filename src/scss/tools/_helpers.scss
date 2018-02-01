@@ -1,0 +1,26 @@
+//
+// Line Separator
+//
+.sep {
+  height: 1px;
+  width: 90%;
+  margin: 0 auto;
+
+  border: 0;
+  background-color: rgba($color-black, 0.1);
+
+  @media (min-width: $mq-md) {
+    width: $mq-md;
+  }
+}
+
+//
+// Colors
+//
+.bg-lightgrey {
+  background-color: $color-lightgrey;
+}
+
+.bg-white {
+  background-color: $color-white;
+}

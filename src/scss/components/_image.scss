@@ -1,0 +1,60 @@
+//
+// Image Grid
+//
+.image {
+  @extend %section-padding;
+
+  background-color: $color-lightgrey;
+
+  &__header {
+    @extend .team__header;
+  }
+
+  &__container {
+
+    &--single {
+      @include flex-grid(1, 1);
+
+      & + .image__container--single,
+      & + .image__container--double {
+        padding-top: 1em;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &--double {
+      @include flex-grid(1, 2);
+        
+      & > * {
+
+        &:first-child {
+          padding-bottom: 1em;
+
+          @media (min-width: $mq-md) {
+            padding-right: 0.5em;
+            padding-bottom: 0;
+          }
+        }
+
+        &:last-child {
+
+          @media (min-width: $mq-md) {
+            padding-left: 0.5em;
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      & + .image__container--single,
+      & + .image__container--double {
+        padding-top: 1em;
+      }
+    }
+  }
+}

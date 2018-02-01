@@ -1,0 +1,30 @@
+figure, img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  display: block;
+  margin: 0;
+}
+
+img {
+  display: block;
+}
+
+//
+// Absolute Background
+//
+.absolute-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}

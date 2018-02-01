@@ -1,0 +1,16 @@
+//
+//
+//
+.post {
+  @extend %section-padding;
+
+  background-color: $color-white;
+
+  &__container {
+    width: 75%;
+    
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+}

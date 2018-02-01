@@ -1,0 +1,16 @@
+//
+// Related
+//
+.related {
+  @extend %section-padding;
+
+  background-color: $color-lightgrey;
+
+  &__header {
+    @extend .team__header;
+  }
+
+  &__container {
+    @include flex-grid(1, 2, $xl: 3);
+  }
+}

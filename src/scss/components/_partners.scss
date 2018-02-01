@@ -1,0 +1,23 @@
+//
+//
+//
+.partners {
+  @extend %section-padding;
+
+  background-color: $color-white;
+
+  &__header {
+    color: $color-black;
+    text-align: center;
+  }
+
+  &__container {
+    @include flex-grid(2, 2);
+
+    align-items: center;
+  }
+
+  &__img {
+
+  }
+}

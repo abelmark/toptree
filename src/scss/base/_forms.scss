@@ -1,0 +1,139 @@
+//
+// Forms
+//
+form {
+  max-width: $mq-xl;
+  margin: 0 auto;
+}
+
+label {
+  @extend %letter-spacing;
+
+  display: block;
+
+  font-family: $font;
+  font-weight: 700;
+  font-size: 1.25em;
+  text-align: left;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25em;
+  padding: 0 0 0.25em 0;
+
+  font-family: $font;
+  line-height: 1.2;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  outline: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input {
+  border-bottom: 1px solid $color-black;
+
+  &:focus {
+    border-bottom: 1px solid $color-alpha;
+  }
+}
+
+textarea {
+  padding: 0.25em;
+
+  border: 1px solid $color-black;
+
+  &:focus {
+    border: 1px solid $color-alpha;
+  }
+}
+
+input[type="submit"] {
+  @include button-slide($color-black, $shadow: 100px 0 0 0);
+
+  margin: 1em 0 0;
+
+  font-size: 1.25em;
+
+  @media (min-width: $mq-md) {
+    margin-top: 2em; 
+  }
+}
+
+.page--form {
+  padding: 2em 0;
+}
+
+//
+// Advertise Form
+//
+.form-advertise {
+  @extend %section-padding;
+
+  text-align: center;
+  background-color: $color-lightgrey;
+
+  &__header {
+    @extend .team__header;
+  }
+
+  &__single {
+    display: inline-block;
+  }
+
+  &__double {
+    @include flex-grid(1, 2);
+
+    @media (min-width: $mq-md) {
+      margin-bottom: 4em;
+    }
+
+    & > * {
+
+      @media (max-width: $mq-md) {
+        margin-bottom: 1em;
+      }
+
+      &:first-child {
+
+        @media (min-width: $mq-sm) {
+          padding-right: 1em;
+        }
+      }
+
+      &:last-child {
+
+        @media (min-width: $mq-sm) {
+          padding-left: 1em;
+        }
+      }
+    }
+  }
+}
+
+//
+// Contact Form 7
+//
+.screen-reader-response {
+  display: none;
+}
+
+.wpcf7-not-valid-tip {
+  font-size: 0.5em;
+  font-weight: 400;
+  color: $color-alpha;
+}
+
+.wpcf7-response-output.wpcf7-validation-errors,
+.wpcf7-response-output.wpcf7-mail-sent-ok {
+  @extend %letter-spacing;
+
+  margin-top: 1em;
+
+  color: $color-alpha;
+}

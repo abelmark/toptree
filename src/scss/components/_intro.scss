@@ -1,0 +1,22 @@
+//
+// Intro
+//
+.intro {
+  @extend %section-padding;
+  @extend %flex-center;
+
+  background-color: $color-white;
+
+  &__container {
+    text-align: center;
+
+    @media (min-width: $mq-md) {
+      width: 65%;
+      max-width: $mq-md;
+    }
+  }
+
+  &__header {
+    margin-bottom: 0.5em;
+  }
+}

@@ -1,0 +1,81 @@
+//
+// Animations
+//
+@keyframes alphaToBlack {
+  from {background-color: $color-alpha;}
+  to {background-color: $color-black;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn80 {
+  from {opacity: 0;}
+  to {opacity: 0.8;}
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+//
+// Animation Classes
+//
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.js-fade-in {
+  animation: fadeIn 2s both;
+}
+
+.fade-in-up {
+  animation-name: fadeInUp;
+}
+
+.fade-in-left {
+  animation-name: fadeInLeft;
+}
+
+.fade-in-right {
+  animation-name: fadeInRight;
+}

@@ -1,0 +1,314 @@
+//
+// Card
+//
+.card {
+  @extend %section-padding;
+
+  background-color: $color-lightgrey;
+
+  &__container {
+
+    &--feature {
+      @include flex-grid(1, 2, $xl: 4);
+    }
+
+    &--triple {
+      @include flex-grid(1, 2, $xl: 3, $xxl: 4);
+    }
+  }
+}
+
+//
+// Feature Card
+//
+.feature-card {
+  margin-bottom: 6em;
+
+  @media (min-width: $mq-md) {
+    margin-bottom: 7em;
+  }
+
+  @media (min-width: $mq-xl) {
+    margin-bottom: 8em;
+  }
+
+  &__container {
+    display: block;
+    height: 100%;
+
+    @media (min-width: $mq-md) and (max-width: $mq-xl) {
+      padding: 1em;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: block;
+    height: 100%;
+
+    &:hover {
+
+      .feature-card__content {
+        bottom: -3.5em;
+
+        @media (min-width: $mq-md) {
+          bottom: -4.5em;
+        }
+
+        @media (min-width: $mq-xl) {
+          bottom: -5.5em;
+        }
+      }
+
+      .feature-card__title {
+        border-bottom: 1px solid $color-alpha;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    height: 20em;
+
+    background-color: $color-black;
+  }
+
+  &__content {
+    @include card-shadow(1px);
+
+    position: absolute;
+    bottom: -4em;
+    left: 0;
+    right: 0;
+
+    height: 6em;
+    width: 90%;
+    margin: auto;
+    padding: 1em 0.75em 0;
+
+    text-align: center;
+    background-color: $color-white;
+    transition: bottom 0.2s ease-in-out;
+
+    @media (min-width: $mq-md) {
+      bottom: -5em;
+
+      height: 7em;
+    }
+
+    @media (min-width: $mq-xl) {
+      bottom: -6em;
+
+      height: 8em;
+    }
+  }
+
+  &__category {
+    @extend %letter-spacing;
+
+    display: block;
+    padding-bottom: 1em;
+
+    font-size: 0.75em;
+    font-weight: 700;
+    color: $color-grey;
+  }
+
+  &__title {
+    display: inline;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+  }
+}
+
+//
+// Vertical Card
+//
+.vertical-card {
+
+  &__container {
+    display: block;
+    height: 100%;
+    padding: 1em 0;
+
+    @media (min-width: $mq-sm) {
+      padding: 1em;
+    }
+  }
+
+  &__link {
+    @include card-shadow(1px);
+
+    display: block;
+    height: 100%;
+
+    background-color: $color-white;
+
+    &:hover {
+
+      .vertical-card__img .absolute-bg {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      .vertical-card__title {
+        border-bottom: 1px solid $color-alpha;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    height: 22em;
+
+    background-color: $color-black;
+    overflow: hidden;
+
+    .absolute-bg {
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+  }
+
+  &__content {
+    padding: 1em 1em 4em;
+
+    text-align: center;
+  }
+
+  &__category {
+    @extend %letter-spacing;
+
+    display: block;
+    padding-bottom: 1.25em;
+
+    font-size: 0.75em;
+    font-weight: 700;
+    color: $color-grey;
+  }
+
+  &__title {
+    @extend .feature-card__title;
+  }
+
+  &__date {
+    @extend %letter-spacing;
+
+    position: absolute;
+    right: 1.25em;
+    bottom: 1.25em;
+
+    font-size: 0.65em;
+    color: $color-grey;
+  }
+}
+
+//
+// Horizontal Card
+//
+.horizontal-card {
+
+  &:nth-child(odd) {
+
+    .horizontal-card__link {
+
+      @media (min-width: $mq-sm) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__container {
+    display: block;
+    height: 100%;
+    padding: 1em 0;
+
+    @media (min-width: $mq-sm) {
+      padding: 1em;
+    }
+  }
+
+  &__link {
+    @include card-shadow(1px);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: $color-white;
+
+    @media (min-width: $mq-sm) {
+      flex-direction: row;
+    }
+
+    &:hover {
+
+      .horizontal-card__img .absolute-bg {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+
+      .horizontal-card__title {
+        border-bottom: 1px solid $color-alpha;
+      }
+    }
+
+    & > * {
+      flex: 1;
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    height: 22em;
+
+    background-color: $color-black;
+    overflow: hidden;
+
+    @media (min-width: $mq-sm) {
+      height: 28em;
+    }
+
+    .absolute-bg {
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+  }
+
+  &__content-container {
+    @extend %flex-center;
+
+    position: relative;
+  }
+
+  &__content {
+    padding: 4em 1em;
+
+    text-align: center;
+
+    @media (min-width: $mq-sm) {
+      padding: 4em 2em;
+    }
+  }
+
+  &__category {
+    @extend .vertical-card__category;
+  }
+
+  &__title {
+    @extend .feature-card__title;
+  }
+
+  &__text {
+    margin-top: 1.25em;
+
+    font-size: 0.75em;
+  }
+
+  &__date {
+    @extend .vertical-card__date;
+  }
+}
